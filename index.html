@@ -16,57 +16,60 @@
             flex-direction: column;
             min-height: 100vh;
             justify-content: space-between;
+            color: white;
         }
-        footer {
-            font-family: Arial, sans-serif;
+
+        header, footer {
             background-color: #7713c1;
             color: white;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
-            position: relative;
-            width: 100%;
+            justify-content: center;
             align-items: center;
         }
-        .header {
+
+        .header, .post {
             background-color: #7713c1;
-            color: white;
-            padding: 25px;
             border-radius: 30px;
             margin: 20px;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 35px;
-        }
-        .post {
-            font-family: Arial, sans-serif;
-            background-color: #7713c1;
-            color: white;
             padding: 25px;
-            margin: 100px;
-            border-radius: 30px;
-            height: auto;
-            gap: 35px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
             display: flex;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
             justify-content: center;
             align-items: center;
+            gap: 30px;
         }
+
+        .post {
+            text-align: center;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
         .icon-wrapper {
             position: relative;
             cursor: pointer;
-            transition: transform 0.4s;
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: transform 0.4s;
         }
+
         .icon-wrapper svg {
             transition: transform 0.4s;
         }
+
         .icon-wrapper:hover svg {
             transform: scale(1.3);
         }
+
         .icon-wrapper span {
             position: absolute;
             top: 100%;
@@ -80,127 +83,133 @@
             transition: opacity 0.3s, top 0.5s;
             font-size: 0.9em;
             white-space: nowrap;
-            margin-top: 5px;
         }
+
         .icon-wrapper:hover span {
             opacity: 1;
             top: 110%;
         }
-        .icon-src span {
-            position: relative;
-            top: -5px;
-            left: -120px;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.75);
-            color: black;
-            padding: 5px 10px;
-            border-radius: 10px;
-            opacity: 0;
-            transition: opacity 0.3s, left 0.5s;
-            font-size: 0.9em;
-            white-space: wrap;
-            margin-top: 5px;
-            text-decoration: none;
 
-        }
-        .icon-src:hover span {
-            top: -5px;
-            left: -138px;
-            position: relative;
-            opacity: 1;
+        .icon-wrapper a {
             text-decoration: none;
-        }
-        .icon-src:hover svg {
-            transform: scale(1.3);
-            text-decoration: none;
-        }
-        .icon-src svg {
-            transition: transform 0.4s;
-            text-decoration: none;
-        }
-        .icon-src {
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.4s;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-        }
-        footer .icon-src {
-            justify-content: right;
+            color: inherit;
         }
 
         .icon-wrapper.discord:hover svg {
             transform: scale(1.5) rotate(720deg);
         }
+
         .icon-wrapper.socials:hover svg {
             transform: scale(1.5) rotate(360deg);
         }
-        .icon-wrapper a {
-            text-decoration: none;
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
         }
 
+        footer p {
+            margin: 0;
+        }
+
+        .icon-src {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .icon-src svg {
+            transition: transform 0.4s;
+        }
+
+        .icon-src:hover svg {
+            transform: scale(1.3);
+        }
+
+        .icon-src span {
+            opacity: 0;
+            margin-left: 10px;
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 5px 10px;
+            border-radius: 10px;
+            transition: opacity 0.3s, margin-left 0.3s;
+            white-space: nowrap;
+        }
+
+        .icon-src:hover span {
+            opacity: 1;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
+
 <div class="header">
     <div class="icon-wrapper">
         <a href="./index">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
             <span>Home Page</span>
         </a>
     </div>
+
     <div class="icon-wrapper">
         <a href="projects">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-open"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/><path d="M21 12.43a1.93 1.93 0 0 0 0-3.36L8.83 2.2a1.64 1.64 0 0 0-1.63 0L3 4.57a1.93 1.93 0 0 0 0 3.36l12.18 6.86a1.636 1.636 0 0 0 1.63 0z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hammer">
+                <path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/>
+            </svg>
             <span>Projects</span>
         </a>
     </div>
+
     <div class="icon-wrapper">
         <a href="https://github.com/Lupancham">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            </svg>
             <span>GitHub</span>
         </a>
     </div>
+
     <div class="icon-wrapper discord">
         <a href="https://discord.gg/SEdT7RH8rN">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-disc-3"><circle cx="12" cy="12" r="10"/><path d="M6 12c0-1.7.7-3.2 1.8-4.2"/><circle cx="12" cy="12" r="2"/><path d="M18 12c0 1.7-.7 3.2-1.8 4.2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-disc-3">
+                <circle cx="12" cy="12" r="10"/><path d="M6 12c0-1.7.7-3.2 1.8-4.2"/><circle cx="12" cy="12" r="2"/><path d="M18 12c0 1.7-.7 3.2-1.8 4.2"/>
+            </svg>
             <span>The Broken Record</span>
         </a>
     </div>
+
     <div class="icon-wrapper socials">
         <a href="socials">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radio"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
-            <span>Socials</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radio">
+                <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9c3.9 3.9 3.9 10.3 0 14.2"/>
+            </svg>
+            <span>Other Socials</span>
         </a>
     </div>
-    <div class="icon-wrapper">
-        <a href="contact">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-contact"><path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"/><rect width="18" height="18" x="3" y="4" rx="2"/><circle cx="12" cy="10" r="2"/><line x1="8" x2="8" y1="2" y2="4"/><line x1="16" x2="16" y1="2" y2="4"/></svg>
-            <span>Contact</span>
-        </a>
-    </div>
+</div>
 
-</div>
-<!-- About Me BELOW THIS -->
 <div class="post">
-    <h4>First Shitty Post X3</h4> <hr>
-    <p>I created this website becuase I have nothing else to do.</p>
+    <h4>Lupancham's Silly Website</h4>
+    <p>A fun place where I showcase my projects, ideas, and other silly things. Feel free to explore!</p>
 </div>
-<!-- FOOTER -->
+
 <footer>
-    <section>
-        <p style="margin: 30px;">Copyright © 2024 Lupancham™ | <strong>All Rights Reserved</strong></p>
-    </section>
-    <section>
-        <div class="icon-src">
-            <a href="https://github.com/Lupancham/Lupancham-Website">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-                <span>Source Code</span>
-            </a>
-        </div>
-    </section>
+    <p>© Lupancham 2024</p>
+    <div class="icon-src">
+        <a href="https://github.com/Lupancham/Lupancham-Website">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml">
+                <path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>
+            </svg>
+            <span>Source Code</span>
+        </a>
+    </div>
 </footer>
+
 </body>
 </html>
